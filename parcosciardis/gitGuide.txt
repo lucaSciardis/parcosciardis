@@ -1,0 +1,29 @@
+Quando finisci le modifiche:
+-aggiungi i file modificati: git add *
+-crea il commit: git commit -m "commento"
+-pusha il commit: git push origin BRANCH_DESIDERATO
+-git pull aggiorno le modifiche
+-Vedo le modifiche fatte su remoto: git branch -r
+-Cambio la branch: git checkout nomedelbranch
+=======
+
+-aggiorno le modifiche: git pull 
+-----------------------------------
+
+
+Run this command to switch to the branch:
+git checkout --track origin/my-branch-name
+
+A - Added (This is a new file that has been added to the repository)
+
+M - Modified (An existing file has been changed)
+
+D - Deleted (a file has been deleted)
+
+U - Untracked (The file is new or has been changed but has not been added to the repository yet)
+
+C - Conflict (There is a conflict in the file)
+
+R - Renamed (The file has been renamed)
+
+S - Submodule (In repository exists another subrepository)
