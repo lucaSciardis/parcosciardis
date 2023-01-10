@@ -4,7 +4,7 @@ Quando finisci le modifiche:
 -pusha il commit: git push origin BRANCH_DESIDERATO
 -git pull aggiorno le modifiche
 -Vedo le modifiche fatte su remoto: git branch -r
--Cambio la branch: git checkout nome
+-Cambio la branch: git checkout nomedelbranch
 =======
 
 -aggiorno le modifiche: git pull 
