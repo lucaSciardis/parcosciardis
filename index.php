@@ -3,6 +3,7 @@ require_once("db.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,27 +12,30 @@ require_once("db.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js.js"></script>
     <title>parcosciardis</title>
-    </head>
+</head>
+
 <body>
-<div class="container-fluid fs-1 bg-dark text-white text-center">Parco Sciardis</div>
-<div id="scelta_parco">
-<form method="POST" action="dopo.php">
-<div class="list-group id='list-tab'">
-<?php
-$sql = "SELECT * FROM tregione";
-$rec = mysqli_query($db_remoto, $sql) or die($sql . "<br>" . mysqli_error($db_remoto));
-while ($array = mysqli_fetch_array($rec)) {
-    $id = $array['id'];
-    $nome = $array['nome'];
-    echo '  <a href="regione.php" class="list-group-item list-group-item-action">'. $nome .'</a>';
- }
-?>
-</div>
-</form>
-</div>
+    <div class="container-fluid fs-1 bg-dark text-white text-center">Parco Sciardis</div>
+    <form action="regione.php" method="post">
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Seleziona Regione</label>
+            <select class="form-select" name="regione">
+                <?php
+                $sql = "SELECT * FROM `tRegione`";
+                $rec = mysqli_query($db_remoto, $sql) or die($sql . "<br>" . mysqli_error($db_remoto));
 
+                while ($array = mysqli_fetch_array($rec)) {
+                    $id = $array['id'];
+                    $nome = $array['nome'];
 
+                    echo "<option name='regione' id='regione'>" . $nome . "</option>";
+                }
 
-
+                ?>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </body>
+
 </html>
